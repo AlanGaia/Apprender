@@ -1,0 +1,76 @@
+@font-face {
+  font-family: Quicksand;
+  src: url(../fonts/Quicksand-Regular.ttf);
+}
+@font-face {
+  font-family: Quicksand-bold;
+  src: url(../fonts/Quicksand-Bold.ttf);
+}
+@font-face {
+  font-family: Quicksand-semiBold;
+  src: url(../fonts/Quicksand-SemiBold.ttf);
+}
+body {
+  font-family: Quicksand;
+}
+
+h1 {
+  font-family: Quicksand-bold;
+}
+
+.navbar {
+  position: absolute;
+}
+
+#main-content {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: url("../images/nolettersmans.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 100%;
+  background-size: 1000px;
+  min-height: 100vh;
+
+  padding: 1px;
+  color: #000000;
+}
+@keyframes slideInFadeUp {
+  from {
+    transform: translate3d(0, 200%, 0);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInFadeUp {
+  animation-name: slideInFadeUp;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+@media (min-width: 993px) {
+  .brand-logo {
+    margin-left: 3%;
+  }
+
+  .center-align {
+    margin-top: 100px;
+  }
+
+  .center-align button {
+    margin: 150px 10px;
+  }
+}
+.secondaryText {
+  font-size: 2em;
+  font-family: Quicksand-semiBold;
+}
