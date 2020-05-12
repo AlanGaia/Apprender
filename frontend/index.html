@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
     <!--Import materialize.css-->
     <link
       type="text/css"
@@ -51,24 +55,26 @@
     <div class="row mb-0">
       <div id="app">
         <section id="main-content">
-          <div class="center-align">
+          <div class="center-align animate__animated animate__slideInUp">
             <h1>Apprender</h1>
             <p class="secondaryText">
               Aprende en tiempo Real o Enseña lo que ya sabes
             </p>
-            <button
-              id="singInBtn"
-              class="blue-grey hoverable waves-effect waves-light btn-large"
-            >
-              Ya tengo una cuenta
-            </button>
-            <button
-              id="registerBtn"
-              class="deep-purple hoverable darken-2 waves-effect waves-light btn-large"
-              onclick="registerForm();"
-            >
-              Comenzar Ahora
-            </button>
+            <div class="btn-container">
+              <button
+                id="registerBtn"
+                class="deep-purple hoverable darken-2 waves-effect waves-light btn-large"
+                onclick="registerForm();"
+              >
+                <span class="">Comenzar Ahora</span>
+              </button>
+              <button
+                id="singInBtn"
+                class="blue-grey hoverable waves-effect waves-light btn-large"
+              >
+                Ya tengo una cuenta
+              </button>
+            </div>
           </div>
         </section>
       </div>
