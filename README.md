@@ -7,16 +7,17 @@ Proyecto final ComIT 2020
 Crear Usuario y Autenticarse
 
 Inscribirse en una clase
+
 Tener un listado de clases inscriptas
 
-Crear clases Consulta (1 clase)
-Crear Clases Aprendizaje (2 Clases o más)
+Crear clases Unicas (1 clase)
+Crear Clases Multiples (2 Clases o más)
 
-Modificar clases Consulta (1 clase)
-Modificar Clases Aprendizaje (2 Clases o más)
+Modificar clases Unicas (1 clase) -
+Modificar Clases Multiples (2 Clases o más)
 
-Obtener Clases Consulta (Obtener listado de 1 clase)
-Obtener Clases Aprendizaje (Obtener listado de 2 clases o más)
+Obtener Clases Unicas (Obtener listado de 1 clase) -
+Obtener Clases Multiples (Obtener listado de 2 clases o más)
 
 Eliminar una clase creada
 
