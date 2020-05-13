@@ -59,6 +59,11 @@ h1 {
   min-width: 230px;
 }
 
+.avatar {
+  width: 150px;
+  height: 150px;
+}
+
 @media (min-width: 993px) {
   .brand-logo {
     margin-left: 3%;
@@ -67,4 +72,31 @@ h1 {
   .center-align {
     margin-top: 100px;
   }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.flex-col {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+.ala {
+  display: flex;
+  margin: 6px 0;
+}
+
+.price-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6em;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
