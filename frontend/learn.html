@@ -24,7 +24,7 @@
     <title>Apprender - La tecnologia nos une</title>
   </head>
   <body>
-    <nav class="transparent">
+    <nav class="transparent mb-5">
       <div class="nav-wrapper">
         <a href="index.html" class="brand-logo">
           <span class="black-text">Apprender</span>
@@ -59,227 +59,124 @@
         <li><a href="../learn.html">Enseñar</a></li>
       </ul>
     </header>
-    <div class="row mb-0">
-      <div class="col s12 m2 blue-grey lighten-4">
+    <div class="row blue-grey lighten-5">
+      <div class="col s12 m12 l3 white card">
         <!-- Grey navigation panel -->
-        <div class="section">
-          <h5>Section 1</h5>
-          <p>Stuff</p>
-        </div>
+        <h4>Filtros</h4>
+        <h5>Fecha de publicación</h5>
+        <input type="checkbox" name="recientes" id="" />
         <div class="divider"></div>
         <div class="section">
           <h5>Section 2</h5>
           <p>Stuff</p>
         </div>
       </div>
-
-      <div class="col s12 m10 blue-grey lighten-5">
-        <!-- Fondo gris para mostrar cards  -->
+      <!-- Fondo gris para mostrar cards  -->
+      <div class="col m12 l9 hide-on-med-and-down">
         <div class="col s12">
-          <div class="card horizontal hoverable">
-            <div class="card-action flex-col">
+          <!-- Card Consulta  -->
+          <div class="card horizontal hoverable mb-5 Quicksand-medium">
+            <!-- Datos del Consultante -->
+            <div
+              class="card-action flex-col pr-5 blue-grey darken-2 white-text"
+            >
               <img class="avatar" src="images/adr.jpg" />
               <a href="#">Ver Perfil</a>
               <h6>
-                Precio por Clase
+                Precio Maximo
               </h6>
-              <span class="price-class text-accent-4 blue lighten-2"
-                >300
-                <i class="material-icons small">local_atm</i>
-              </span>
+              <span class="price-class green accent-4">$300</span>
             </div>
-
-            <div class="card-stacked">
-              <h5 class="header">Adrian Reconquista</h5>
-
+            <!-- Contenido principal consulta -->
+            <div class="card-stacked p-5">
+              <span>Adrian Reconquista</span>
+              <h5 class="header">Consulta con WebSockets</h5>
               <p>
-                Hola! Mi nombre es Adrian y soy Profesor de Inglés. Me crié en
-                London, en la universidad de Cambridge. Actualmente me encuentro
-                estudiando programación y dando clases de ingles a todo aquel
-                que desee profesionalizarse en el idioma
+                Me gustaria poder hacer un Chat en tiempo real entre usuarios
+                mediante Sockets. Pensaba usar Sockets.io y NodeJs para la
+                integración.
               </p>
-              <div class="card-content">
-                <span class="new badge blue" data-badge-caption="">Alumno</span>
-                <span class="new badge red" data-badge-caption=""
-                  >Profesor</span
+              <!-- Conocimientos  -->
+              <div class="flex-row flex-wrap mb-5">
+                <span>Conocimientos relacionados:</span>
+                <span class="new badge blue-grey" data-badge-caption=""
+                  >Tecnologia</span
                 >
-                <span class="new badge yellow" data-badge-caption=""
+                <span class="new badge red" data-badge-caption=""
                   >Programación</span
                 >
-                <span class="new badge blue darken-2" data-badge-caption=""
-                  >Inglés</span
+                <span class="new badge yellow" data-badge-caption=""
+                  >JavaScript</span
                 >
+                <span class="new badge green darken-2" data-badge-caption=""
+                  >NodeJS</span
+                >
+              </div>
+              <div class="divider"></div>
+              <!-- Contactar y Horarios -->
+              <div class="card-content right-align flex-row spaceBtwn">
                 <button
                   class="indigo hoverable accent-3 waves-effect waves-light btn-large"
                 >
-                  Contratar
+                  Contactar
                 </button>
-                <h5>
-                  Dias Y Horarios disponibles
-                  <i class="material-icons">keyboard_arrow_down</i>
+                <h5 id="dateAndTimeTitle">
+                  <a href="#modal1" class="modal-trigger">
+                    <span class="black-text">
+                      Dias Y Horarios disponibles
+                    </span>
+                    <i class="material-icons">keyboard_arrow_down</i>
+                  </a>
                 </h5>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                  <div class="modal-content">
+                    <table class="">
+                      <thead>
+                        <tr>
+                          <th>Lunes</th>
+                          <th>Martes</th>
+                          <th>Miercoles</th>
+                          <th>Jueves</th>
+                          <th>Viernes</th>
+                          <th>Sabado</th>
+                          <th>Domingo</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="lunes green accent-4">
+                            15:00 <br />- <br />
+                            17:00
+                          </td>
+                          <td class="martes green accent-4">
+                            18:00 <br />- <br />
+                            22:00
+                          </td>
+                          <td class="miercoles green accent-4">
+                            15:00 <br />- <br />
+                            17:00
+                          </td>
+                          <td class="jueves">-</td>
+                          <td class="viernes">-</td>
+                          <td class="sabado">-</td>
+                          <td class="domingo green accent-4">
+                            10:00 <br />
+                            - <br />12:00
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Modal Structure -->
               </div>
             </div>
           </div>
-        </div>
-        <div class="col s12">
-          <div class="card horizontal hoverable">
-            <div class="card-action flex-col">
-              <img class="avatar" src="images/adr.jpg" />
-              <a href="#">Ver Perfil</a>
-              <h6>
-                Precio por Clase
-              </h6>
-              <span class="price-class text-accent-4 blue lighten-2"
-                >300
-                <i class="material-icons small">local_atm</i>
-              </span>
-            </div>
-
-            <div class="card-stacked">
-              <h5 class="header">Adrian Reconquista</h5>
-
-              <p>
-                Hola! Mi nombre es Adrian y soy Profesor de Inglés. Me crié en
-                London, en la universidad de Cambridge. Actualmente me encuentro
-                estudiando programación y dando clases de ingles a todo aquel
-                que desee profesionalizarse en el idioma
-              </p>
-              <div class="card-content">
-                <span class="new badge blue" data-badge-caption="">Alumno</span>
-                <span class="new badge red" data-badge-caption=""
-                  >Profesor</span
-                >
-                <span class="new badge yellow" data-badge-caption=""
-                  >Programación</span
-                >
-                <span class="new badge blue darken-2" data-badge-caption=""
-                  >Inglés</span
-                >
-                <button
-                  class="indigo hoverable accent-3 waves-effect waves-light btn-large"
-                >
-                  Contratar
-                </button>
-                <h5>
-                  Dias Y Horarios disponibles
-                  <i class="material-icons">keyboard_arrow_down</i>
-                </h5>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12">
-          <div class="card horizontal hoverable">
-            <div class="card-action flex-col">
-              <img class="avatar" src="images/adr.jpg" />
-              <a href="#">Ver Perfil</a>
-            </div>
-
-            <div class="card-stacked">
-              <h5 class="header">Adrian Reconquista</h5>
-
-              <p>
-                Hola! Mi nombre es Adrian y soy Profesor de Inglés. Me crié en
-                London, en la universidad de Cambridge. Actualmente me encuentro
-                estudiando programación y dando clases de ingles a todo aquel
-                que desee profesionalizarse en el idioma
-              </p>
-              <div class="card-content">
-                <span class="new badge blue" data-badge-caption="">Alumno</span>
-                <span class="new badge red" data-badge-caption=""
-                  >Profesor</span
-                >
-                <span class="new badge yellow" data-badge-caption=""
-                  >Programación</span
-                >
-                <span class="new badge blue darken-2" data-badge-caption=""
-                  >Inglés</span
-                >
-                <button
-                  class="deep-purple hoverable darken-2 waves-effect waves-light btn-large"
-                >
-                  Contratar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12">
-          <div class="card horizontal hoverable">
-            <div class="card-action flex-col">
-              <img class="avatar" src="images/adr.jpg" />
-              <a href="#">Ver Perfil</a>
-            </div>
-
-            <div class="card-stacked">
-              <h5 class="header">Adrian Reconquista</h5>
-
-              <p>
-                Hola! Mi nombre es Adrian y soy Profesor de Inglés. Me crié en
-                London, en la universidad de Cambridge. Actualmente me encuentro
-                estudiando programación y dando clases de ingles a todo aquel
-                que desee profesionalizarse en el idioma
-              </p>
-              <div class="card-content">
-                <span class="new badge blue" data-badge-caption="">Alumno</span>
-                <span class="new badge red" data-badge-caption=""
-                  >Profesor</span
-                >
-                <span class="new badge yellow" data-badge-caption=""
-                  >Programación</span
-                >
-                <span class="new badge blue darken-2" data-badge-caption=""
-                  >Inglés</span
-                >
-                <button
-                  class="deep-purple hoverable darken-2 waves-effect waves-light btn-large"
-                >
-                  Contratar
-                </button>
-                <h5>Dias y Horarios disponibles</h5>
-                <table class="">
-                  <thead>
-                    <tr>
-                      <th>Lunes</th>
-                      <th>Martes</th>
-                      <th>Miercoles</th>
-                      <th>Jueves</th>
-                      <th>Viernes</th>
-                      <th>Sabado</th>
-                      <th>Domingo</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td class="lunes green accent-4">
-                        15:00 <br />- <br />
-                        17:00
-                      </td>
-                      <td class="martes green accent-4">
-                        18:00 <br />- <br />
-                        22:00
-                      </td>
-                      <td class="miercoles green accent-4">
-                        15:00 <br />- <br />
-                        17:00
-                      </td>
-                      <td class="jueves grey"></td>
-                      <td class="viernes grey"></td>
-                      <td class="sabado grey"></td>
-                      <td class="domingo green accent-4">
-                        10:00 <br />
-                        - <br />12:00
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+          <!-- card end -->
         </div>
       </div>
     </div>
@@ -291,6 +188,14 @@
         var instances = M.Sidenav.init(elems, {});
         let menuIcon = document.getElementsByClassName("material-icons")[0];
         menuIcon.style.color = "black";
+      });
+    </script>
+    <script>
+      const h5 = document.getElementById(`dateAndTimeTitle`);
+      h5.addEventListener("click", function () {
+        console.log(h5);
+        var elems = document.querySelectorAll(".modal");
+        var instances = M.Modal.init(elems, {});
       });
     </script>
 

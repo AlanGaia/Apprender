@@ -10,6 +10,10 @@
   font-family: Quicksand-semiBold;
   src: url(../fonts/Quicksand-SemiBold.ttf);
 }
+@font-face {
+  font-family: Quicksand-medium;
+  src: url(../fonts/Quicksand-Medium.ttf);
+}
 body {
   font-family: Quicksand;
 }
@@ -20,6 +24,9 @@ h1 {
 
 .navbar {
   position: absolute;
+}
+.Quicksand-medium {
+  font-family: Quicksand-medium;
 }
 
 .secondaryText {
@@ -43,6 +50,18 @@ h1 {
 .mb-0 {
   margin-bottom: 0;
 }
+.mb-5 {
+  margin-bottom: 20px;
+}
+.mr-5 {
+  margin-right: 20px;
+}
+.pr-5 {
+  padding-right: 20px;
+}
+.p-5 {
+  padding: 20px;
+}
 .center-align {
   margin-top: 130px;
 }
@@ -62,6 +81,7 @@ h1 {
 .avatar {
   width: 150px;
   height: 150px;
+  border-radius: 2%;
 }
 
 @media (min-width: 993px) {
@@ -99,4 +119,16 @@ h1 {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.spaceBtwn {
+  justify-content: space-between;
+}
+
+#dateAndTimeTitle {
+  cursor: pointer;
 }
