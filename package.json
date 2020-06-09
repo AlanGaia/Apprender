@@ -1,0 +1,24 @@
+{
+  "name": "apprender",
+  "version": "1.0.0",
+  "description": "comunidad it final project - Alan Gaia",
+  "main": "server.js",
+  "scripts": {
+    "mongo": "",
+    "dev": "node  backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlanGaia/Apprender.git"
+  },
+  "author": "Alan Gaia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlanGaia/Apprender/issues"
+  },
+  "homepage": "https://github.com/AlanGaia/Apprender#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4"
+  }
+}
