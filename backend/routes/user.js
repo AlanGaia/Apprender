@@ -1,17 +1,10 @@
 const {Router} = require('express');
 const router = Router();
+const {index, signin} = require('../controller/UserController');
 
-router.get('/', (req, res) => {
-    res.send(`<h1>User Index Route </h1>
-    <a href="/singin" >Login</a>
-    <a href="/singup">Register</a>`);
-});
+router.get('/', index);
 
-router.get('/singin', (req, res) => {
-    res.send(`<h1>Form Sing In User  Route </h1>
-    <a href="/singin" >Login</a>
-    <a href="/singup">Register</a>`)
-})
+router.get('/signin', signin)
 
 
 

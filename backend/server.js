@@ -11,23 +11,25 @@ const app = express();
 
 
 //Engine views Config
-app.set('view Engine', "handlebars");
-app.set("handlebars", expHbs({
-    layoutsDir: path.join(__dirname, "views/layouts"),
-    defaultLayout: "main",
+app.set('view engine', "handlebars");
+app.engine("handlebars", expHbs({
+  layoutsDir: path.join(__dirname, "views/layouts"),
+  defaultLayout: "layout",
 }));
 app.set("views", path.join(__dirname, "views"));
 //------------------------------------
 
+app.use('/user', require('./routes/user'));
 
-//Routes
+//Static Files
+app.use(express.static(path.join(__dirname, 'public')))
+
+// //Routes
 app.get('/', (req, res) => {
-    res.render("")
+  res.render("index");
 })
-app.use('/user', require('./routes/user'))
 
 
 app.listen(PORT, () => {
-    console.log(`Server started on http://localhost:${PORT}`);
-    
+  console.log(`Server started on http://localhost:${PORT}`);
 })
