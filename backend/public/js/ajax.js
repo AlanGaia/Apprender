@@ -34,15 +34,14 @@ function registerForm() {
             <div class="input-field col s6">
               <i class="material-icons prefix">done_all</i>
               <input id="icon_confirmPassword" type="password" >
-              <label for="icon_confirmPassword" data-error="Las contraseñas no coinciden">Confirmar Contraseña</label>
+              <label for="icon_confirmPassword">Confirmar Contraseña</label>
             </div>
-            <div id="errors" class="col s6 p-5 hide red lighten-4">
-            <span class="red-text">Las contraseñas deben coincidir</span>
-          </div>
+
+
             <div class="center-align mt-5 col s12">
-              <button class="pink hoverable  waves-effect waves-light btn-large ">
-              <span class="">Crear una cuenta</span>
-              </button>    
+              <button id="registerFormBtn" class="pink hoverable  waves-effect waves-light btn-large disabled">
+              <span>Crear una cuenta</span>
+              </button>
             </div>
           </div>
         </form>
@@ -58,13 +57,26 @@ function registerForm() {
   });
 
   const app = document.getElementById("main-content");
-  app.addEventListener("click", function () {
-    console.log("si señor"); //<--Borrar esto
+
+
+
+  app.addEventListener("keyup", function () {
+  
     const passwordInput = document.getElementById('icon_password');
     const passwordConfirmInput = document.getElementById('icon_confirmPassword');
+    const nameInput = document.getElementById('icon_prefix');
+    const mailInput = document.getElementById('icon_email');
+    const registerBtn = document.getElementById('registerFormBtn');
     const errors = document.getElementById('errors');
 
-    if(passwordInput !== null){
+    const inputs = [nameInput,mailInput,passwordInput,passwordConfirmInput];
+
+
+
+    const valid =  inputs.filter(input => input.classList.contains('valid'));
+
+    console.log(valid.length);
+    
       passwordInput.addEventListener('focusout' ,() => {
         if (passwordInput.value !== passwordConfirmInput.value){
           passwordConfirmInput.classList.remove('valid')
@@ -74,6 +86,9 @@ function registerForm() {
           passwordConfirmInput.classList.add('valid')
         }
       })
+      
+
+    
 
       passwordConfirmInput.addEventListener('keyup', () =>{
         if (passwordInput.value !== passwordConfirmInput.value){
@@ -87,8 +102,16 @@ function registerForm() {
         }
       })
 
-    }
-  });
+      if (valid.length === 4) {
+        registerBtn.classList.remove('disabled')
+      } else {
+        registerBtn.classList.add('disabled')
+      }
+
+
+    })
+
+  
 
 
   xhttp.open("GET", "http://localhost:8018/user/signin");
