@@ -47,6 +47,10 @@ h1 {
   color: #000000;
 }
 
+.flex{
+  display: flex;
+}
+
 .mb-0 {
   margin-bottom: 0 !important;
 }

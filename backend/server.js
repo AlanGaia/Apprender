@@ -3,11 +3,18 @@ const express = require('express');
 const path  = require('path');
 const expHbs = require('express-handlebars');
 const PORT = 8018;
-//middlewares
+const bodyParser = require('body-parser');
 
 
-//initialization 
+//Initialization 
 const app = express();
+
+
+//Middlewares
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
+
 
 
 //Engine views Config
@@ -24,10 +31,12 @@ app.use('/user', require('./routes/user'));
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')))
 
-// //Routes
+//Routes
 app.get('/', (req, res) => {
   res.render("index");
 })
+
+
 
 
 app.listen(PORT, () => {
