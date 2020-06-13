@@ -147,3 +147,7 @@ h1 {
   margin-top: 50px;
   display: flex;
 }
+
+#secretmsg{
+  opacity: 0.1;
+}

@@ -46,6 +46,8 @@ function registerForm() {
               <button type="submit" id="registerFormBtn" class="pink hoverable  waves-effect waves-light btn-large disabled">
               <span>Crear una cuenta</span>
               </button>
+              <br/>
+              <span id="secretmsg" class="hide">check the console</span>
             </div>
           </div>
         </form>
@@ -60,8 +62,9 @@ function registerForm() {
     }
   });
 
+  
   const app = document.getElementById("main-content");
-
+  
 
   app.addEventListener("change", function () {
   
@@ -126,14 +129,15 @@ function registerForm() {
 
       if (valid.length === 4) {
         registerBtn.classList.remove('disabled')
+        document.getElementById('secretmsg').classList.remove('hide')
+        console.log('Tipea secretcode y descubre el codigo oculto');
       } else {
         registerBtn.classList.add('disabled')
       }
 
     })
 
-  
-
+    
 
   xhttp.open("GET", "http://localhost:8018/user/signin");
   xhttp.send();
