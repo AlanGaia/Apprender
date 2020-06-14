@@ -4,6 +4,7 @@ const path  = require('path');
 const expHbs = require('express-handlebars');
 const PORT = 8018;
 const bodyParser = require('body-parser');
+const userRouter = require('./routes/user')
 
 
 //Initialization 
@@ -15,8 +16,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 
-
-
 //Engine views Config
 app.set('view engine', "handlebars");
 app.engine("handlebars", expHbs({
@@ -25,11 +24,12 @@ app.engine("handlebars", expHbs({
 }));
 app.set("views", path.join(__dirname, "views"));
 //------------------------------------
-
-app.use('/user', require('./routes/user'));
-
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')))
+
+
+app.use('/user', userRouter);
+
 
 //Routes
 app.get('/', (req, res) => {

@@ -80,12 +80,12 @@
 
 							<div class="row">
 								<div class="col s12 right-align flex">
-									<button id="registerBtn" class="deep-purple hoverable darken-2 waves-effect waves-light btn-large mt-5">
-										<span class="">Iniciar Sesión</span>
-									</button>
-									<button id="registerBtn" class="deep-purple hoverable darken-2 waves-effect waves-light btn-large mt-5">
-										<span class="">Cancelar</span>
-									</button>
+									<a id="falseloginbtn" class="deep-purple hoverable darken-2 waves-effect waves-light btn-large mt-5" onclick="magiClick();" >
+										<span id="falselogin"class="">Iniciar Sesión</span>
+									</a>
+									<a id="falseloginbtn2" class="deep-purple hoverable darken-2 waves-effect waves-light btn-large mt-5" onclick="magiClick2();">
+										<span id="falselogin2" class="">Cancelar</span>
+									</a>
 								</div>
 							</div>
 					</div>
@@ -106,11 +106,38 @@
 			let menuIcon = document.getElementsByClassName("material-icons")[0];
 			menuIcon.style.color = "black";
 		});
-		let secretcode = '01001001 01100110 00100000 01111001 01101111 01110101 00100000 01100011 01100001 01101110 00100000 01110011 01110101 01100010 01101101 01101001 01110100 00100000 01110100 01101000 01100101 00100000 01100110 01101111 01110010 01101101 00100000 01110111 01101001 01110100 01101000 00100000 01100001 01101110 00100000 01100101 01101101 01110000 01110100 01111001 00100000 01101001 01101110 01110000 01110101 01110100 00101100 00100000 01111001 01101111 01110101 00100000 01100001 01110010 01100101 00100000 01100111 01101111 01101001 01101110 00100000 01110100 01101111 00100000 01110100 01101000 01100101 00100000 01110011 01100101 01100011 01110010 01100101 01110100 00100000 01010010 01100101 01100111 01101001 01110011 01110100 01100101 01110010 00100000 01100110 01101111 01110010 01101101'
+		let secretcode = `Hay un codigo secreto!!! 
+		Pero parece que esta en Binario
+		Si te sirve de algo aqui te lo dejo:
+
+		01001001 01100110 00100000 01111001 01101111 01110101 00100000 01100011 01100001 01101110 00100000 01110011 01110101 01100010 01101101 01101001 01110100 00100000 01110100 01101000 01100101 00100000 01010010 01100101 01100111 01101001 01110011 01110100 01100101 01110010 00100000 01100110 01101111 01110010 01101101 00100000 01110111 01101001 01110100 01101000 00100000 01100001 01101110 00100000 01100101 01101101 01110000 01110100 01111001 00100000 01101001 01101110 01110000 01110101 01110100 00101100 00100000 01111001 01101111 01110101 00100000 01100001 01110010 01100101 00100000 01100111 01101111 01101001 01101110 00100000 01110100 01101111 00100000 01110100 01101000 01100101 00100000 01110011 01100101 01100011 01110010 01100101 01110100 00100000 01010010 01100101 01100111 01101001 01110011 01110100 01100101 01110010 00100000 01100110 01101111 01110010 01101101`
+
+	const magiClick = () => {
+		const btn = document.getElementById('falseloginbtn');
+		btn.classList.remove('deep-purple');
+		btn.classList.add('green');
+		document.getElementById('falselogin').innerText = 'Iniciando Sesion';
+		setTimeout(() => {
+		document.getElementById('falselogin').innerText = 'No se pudo';
+		btn.classList.remove('green');
+		btn.classList.add('deep-purple');
+		}, 3000)
+	}
+	const magiClick2 = () => {
+		const btn = document.getElementById('falseloginbtn2');
+		btn.classList.remove('deep-purple');
+		btn.classList.add('red');
+		document.getElementById('falselogin2').innerText = 'Cancelando';
+		setTimeout(() => {
+		document.getElementById('falselogin2').innerText = 'Tampoco se pudo x2';
+		btn.classList.remove('red');
+		btn.classList.add('deep-purple');
+		}, 3000)
+	}
 
 	</script>
 
-	<script src="js/ajax.js"></script>
+	<script src="/js/ajax.js"></script>
 </body>
 
 </html>

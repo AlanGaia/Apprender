@@ -139,6 +139,6 @@ function registerForm() {
 
     
 
-  xhttp.open("GET", "http://localhost:8018/user/signin");
+  xhttp.open("GET", "http://localhost:8018/");
   xhttp.send();
 }
