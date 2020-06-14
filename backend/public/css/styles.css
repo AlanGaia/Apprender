@@ -35,14 +35,24 @@ h1 {
 }
 
 #main-content {
-  background-size: cover;
-  background-repeat: no-repeat;
   background: url("../images/nolettersmans.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 100%;
   background-size: 1000px;
   min-height: 100vh;
+  padding: 1px;
+  color: #000000;
+}
+#myClasses {
+  background: url("../images/goleador.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 100%;
+  min-height: 100vh;
+  background-size: 1000px;
   padding: 1px;
   color: #000000;
 }
@@ -75,7 +85,9 @@ h1 {
 .center-align {
   margin-top: 130px;
 }
-
+.notSoCenter-align{
+  margin-top: 65px;
+}
 .btn-container {
   margin-top: 120px;
   display: flex;
@@ -151,10 +163,26 @@ h1 {
 #secretmsg{
   opacity: 0.2;
 }
-
+#notificationMsg{
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 480px;
+  max-width: 840px !important;
+}
+.btnAction{
+min-width: 220px;
+}
+.eventsTitle{
+  font-size: 3.7em;
+}
 .alertmsg{
   padding: 10px;
   border-radius: 8px;
+}
+
+.containerGuideApp{
+  display: flex;
+  justify-content: space-evenly;
 }
 
 
