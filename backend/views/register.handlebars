@@ -2,11 +2,11 @@
   <div class="container">
     <div class="row">
       <form action="/user/register" method="POST" class="col s12">
-        <h1 class="hero-title glitch center-align" data-text="BAD REQUEST">ERROR 400</h1>
+        <h1 class="glitch center-align" data-text="BAD REQUEST">ERROR 400</h1>
         {{#if message}}
         <h5>-----------------------------------</h5>
         <div id="errors" class="col s12 flex p-5 mb-5  lighten-4">
-          <h5 class="hero-title glitch" data-text="{{message}}">{{message}}</h5>
+          <h5 class=" glitch" data-text="{{message}}">{{message}}</h5>
         </div>
         {{/if}}
         <h5>-----------------------------------</h5>
@@ -32,7 +32,7 @@
           <label for="icon_confirmPassword">Confirmar contraseña</label>
         </div>
         <h5>------------------------------------</h5>
-        <h4 class="pink-text hero-title">Where are you?</h4>
+        <h4 class="pink-text">Where are you?</h4>
 
         <div id="countryContainer" class="col s12 m4 hide">
           <div class="card blue-grey darken-4 ">
@@ -67,7 +67,7 @@
               <p>
                 <label for="hacker">
                   <input type="checkbox" id="hacker" name="hacker"/>
-                  <span class="card-title">Desbloquear logro <h3 class="hero-title glitch " data-text="Hacker">Hacker</h3></span>
+                  <span class="card-title">Desbloquear logro <h3 class="glitch " data-text="Hacker">Hacker</h3></span>
                 </label>
               </p>
             </div>

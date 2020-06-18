@@ -4,8 +4,10 @@ const createLearningClass = (req, res) => {
   const { title, category, especiality, description, date_event, time_event, price_event } = req.body;
   const date = new Date;
   const createdDate = date.toLocaleDateString();
+  
 
   const newClass = {
+    hacker: req.session.loggedUser.hacker,
     title,
     category,
     link: null,

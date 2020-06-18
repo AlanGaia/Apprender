@@ -1,18 +1,22 @@
-# Apprender
+# Apprender 💡
 ![apprender title](/backend/public/images/apprender.png)
 
 
-Proyecto final ComIT 2020
+## Proyecto final ComIT 2020 💻
 
-El proyecto esta enfocado a la educación online, ya sea Como Profesor/a o como Alumno/a.
+# 👨🏽‍🎓 👩🏻‍🎓 👩🏿‍🎓 👨🏻‍🎓  -   👨🏻‍🏫 👩🏽‍🏫
 
-##### Profesor a cargo: [Ricardo Segretin ](https://github.com/rsegretin "Ricardo Segretin")
-##### Developed by : [Alan ](https://github.com/AlanGaia "Alan Gaia")
+# El proyecto esta enfocado a la educación online, ya sea Como Profesor/a o como Alumno/a.
+
+#### Profesor a cargo: [Ricardo Segretin ](https://github.com/rsegretin "Ricardo Segretin")
+#### Developed by : [Alan ](https://github.com/AlanGaia "Alan Gaia")
 
 
-## ¿Como instalarlo? 
+## ¿Como instalarlo? / How to Install
 
+Developers Mode:  NPM start
 
+Live demo: [Live Demo](https://www.timeanddate.com/countdown/launch?iso=20200618T22&p0=51&msg=Live+Demo+Apprender&font=hand&csz=1/ "Apprender app")
 
 
 ## ¿De que se trata esto?

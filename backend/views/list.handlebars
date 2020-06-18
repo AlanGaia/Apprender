@@ -11,28 +11,55 @@
           <div class="container">
             {{#each classList}}
             {{#if this.pending}}
-            <li class="collection-item col s12 naoBorder events {{this.createdByMail}}">
-              {{#if this.price_event}}
-              <legend class="Quicksand-medium fs-1 right green accent-2">Precio {{this.price_event}}</legend>
+              {{#if hacker}}
+            <li class="collection-item col s12 naoBorder events black white-text  {{this.createdByMail}}">
               {{else}}
-              <legend class="Quicksand-medium fs-1 right yellow accent-2">VOLUNTARIO</legend>
+            <li class="collection-item col s12 naoBorder events  {{this.createdByMail}}">
+              {{/if }}
+
+              {{#if this.price_event}}
+              <legend class="Quicksand-medium fs-1 right green accent-2 black-text">Precio {{this.price_event}}</legend>
+              {{else}}
+              <legend class="Quicksand-medium fs-1 right yellow accent-2 black-text">VOLUNTARIO</legend>
               {{/if}}
               <h6 class="flow-text mt-5">Solicitud para el dia <b>{{this.date_event}}</b> a las
                 <b>{{this.time_event}}</b></h6>
+              {{#if hacker}}
+              <h4 class="Quicksand-medium glitch-w white-text" data-text="{{this.title}}">{{this.title}}</h4>
+              {{else}}
               <h4 class="Quicksand-medium">{{this.title}}</h4>
+              {{/if }}
               <h5>{{this.category}} - {{this.especiality}}</b></h5>
               <p class="flow-text">{{this.description}}</p>
-              <div id="btnWelcomeContainer" class="collection-item">
+              {{#if hacker}}
+              <div id="btnWelcomeContainer" class="collection-item black">
+
+                <form action="/teach/requestClass/{{this._id}}" method="POST">
+                  <button type="submit" name="id_event" value="{{this._id}}"
+                    class="black accent-3 hoverable btnAction    waves-effect waves-light btn-large">
+                    <span class="white-text secondaryText glitch-w" data-text="Agendar Clase">Agendar Clase </span>
+                  </button>
+              {{else}}
+                <div id="btnWelcomeContainer" class="collection-item ">
+
                 <form action="/teach/requestClass/{{this._id}}" method="POST">
                   <button type="submit" name="id_event" value="{{this._id}}"
                     class="indigo accent-3 hoverable btnAction  waves-effect waves-light btn-large">
                     <span class="white-text secondaryText">Agendar Clase </span>
                   </button>
+              {{/if }}
+
+
                 </form>
                 {{!-- <a  class="indigo accent-3 hoverable btnAction  waves-effect waves-light btn-large">
               </a> --}}
               </div>
+              {{#if hacker}}
+              <legend class="Quicksand-medium ">Anuncio Creado por {{this.createdByName}}</legend>
+              {{else}}
               <legend class="Quicksand-medium">Anuncio Creado por {{this.createdByName}}</legend>
+              {{/if }}
+
             </li>
             {{/if}}
             {{/each}}
