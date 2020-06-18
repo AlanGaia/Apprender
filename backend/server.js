@@ -58,6 +58,6 @@ app.use("/user", userRouter);
 app.use("/learn", learnRouter);
 app.use("/teach", teachRouter);
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server started on http://localhost:${PORT}`);
 });
