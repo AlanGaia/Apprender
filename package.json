@@ -4,7 +4,7 @@
   "description": "comunidad it final project - Alan Gaia",
   "main": "server.js",
   "scripts": {
-    "mongo": "",
+    "start": "node backend/server.js",
     "dev": "node  backend/server.js"
   },
   "repository": {
