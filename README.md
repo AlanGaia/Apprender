@@ -16,7 +16,7 @@
 
 Developers Mode:  NPM start
 
-Live demo: [Live Demo](https://www.timeanddate.com/countdown/launch?iso=20200618T22&p0=51&msg=Live+Demo+Apprender&font=hand&csz=1/ "Apprender app")
+Live demo: [Live Demo](https://apprenderjuntos.herokuapp.com/ "Apprender app")
 
 
 ## ¿De que se trata esto?
