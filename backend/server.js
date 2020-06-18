@@ -8,6 +8,7 @@ const userRouter = require("./routes/user");
 const learnRouter = require("./routes/learn");
 const teachRouter = require("./routes/teach");
 const expSession = require("express-session");
+const cors = require("cors");
 
 //Initialization
 const app = express();
@@ -15,6 +16,7 @@ const app = express();
 //Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors())
 
 //Engine views Config
 app.set("view engine", "handlebars");
