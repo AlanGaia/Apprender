@@ -1,0 +1,84 @@
+<div class="row white notSoCenter-align">
+  <div class="col s12">
+    <!-- Grey navigation panel -->
+    <h2 class="center">Cursos</h2>
+    <div class="nav-content center blue darken-2">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#test1">Tecnologia</a></li>
+        <li class="tab"><a href="#test2">Idiomas</a></li>
+        <li class="tab"><a href="#test3">Ciencias</a></li>
+        <li class="tab"><a href="#test4">Arte</a></li>
+      </ul>
+    </div>
+
+    <div id="courses" class="container">
+      <div id="coursesContainer" class="">
+        <div class="col s12 m12 l10 course">
+          <!-- Card Consulta  -->
+          <div class="card horizontal hoverable mb-5 Quicksand-medium">
+            <!-- Datos del Consultante -->
+            <div class="card-action flex-col pr-5 blue-grey darken-1 hide-on-med-and-down white-text">
+              <img class="avatar" src="images/adr.jpg" />
+              <a href="#">Ver Perfil</a>
+              <h6>
+                Precio Maximo
+              </h6>
+              <span class="price-class green accent-4">$300</span>
+            </div>
+            <!-- Contenido principal consulta -->
+            <div class="card-stacked p-5">
+              <span>Adrian Reconquista</span>
+              <h5 class="header">Consulta con WebSockets</h5>
+              <p>
+                Me gustaria poder hacer un Chat en tiempo real entre usuarios
+                mediante Sockets. Pensaba usar Sockets.io y NodeJs para la
+                integración.
+              </p>
+              <!-- Conocimientos  -->
+              <div class="flex-row flex-wrap mb-5">
+                <span>Conocimientos relacionados:</span>
+                <span class="new badge blue-grey" data-badge-caption="">Tecnologia</span>
+                <span class="new badge red" data-badge-caption="">Programación</span>
+                <span class="new badge yellow darken-2" data-badge-caption="">JavaScript</span>
+                <span class="new badge green darken-2" data-badge-caption="">NodeJS</span>
+              </div>
+              <div class="divider"></div>
+              <!-- Contactar y Horarios -->
+              <div class="card-content right-align flex-row spaceBtwn">
+                <button class="indigo hoverable  waves-effect waves-light btn-large">
+                  Contactar
+                </button>
+
+
+                <!-- Modal Structure -->
+              </div>
+            </div>
+          </div>
+          <!-- card end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".sidenav");
+    var instances = M.Sidenav.init(elems, {});
+    let menuIcon = document.getElementsByClassName("material-icons")[0];
+    menuIcon.style.color = "black";
+  });
+</script>
+<script>
+  const h5 = document.getElementById(`dateAndTimeTitle`);
+  h5.addEventListener("click", function () {
+    console.log(h5);
+    var elems = document.querySelectorAll(".modal");
+    var instances = M.Modal.init(elems, {});
+  });
+</script>

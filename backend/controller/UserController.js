@@ -1,5 +1,4 @@
-const mongodb = require("mongodb");
-const mongoURL = "mongodb://localhost:27017";
+const {mongodb, mongoURL } = require('../database/database');
 
 const index = (req, res) => {
   res.send("hola index");
@@ -51,7 +50,29 @@ const signin = (req, res) => {
           });
           return client.close();
         } else {
+
+          if (foundUser == null) {
+            res.render("error", {
+              layout: "public",
+              success: false,
+              color: "red",
+              message: "Disculpa se pudo consultar la base de datos pero no se encontro ningun usuario registrado",
+            });
+            return client.close();
+          }
+
+          if (foundUser.password !== password) {
+            return res.render("login", {
+              layout: "public",
+              success: false,
+              color: "pink",
+              message: "Hay una discrepancia entre la información recibida desde el lado del cliente con el lado del servidor lo que normalmente conduciria a un codigo de error 401",
+            });
+          }
           if (foundUser.password === password) {
+
+            req.session.loggedUser = foundUser;
+
             res.render("welcome",{
               layout: "logged",
               success: true,
@@ -61,6 +82,8 @@ const signin = (req, res) => {
             });
           return client.close();
           }
+
+
         }
       });
 
@@ -84,12 +107,15 @@ const register = (req, res) => {
       status: 400,
     });
   }
+  const events = [];
 
   const newUser = {
     name,
     email,
     password,
     hacker,
+    events,
+    cash: 500,
   };
 
   mongodb.MongoClient.connect(mongoURL, (err, client) => {
@@ -135,6 +161,7 @@ const register = (req, res) => {
                   message:
                     "Disculpa, no se ha podido crear la cuenta, intente mas tarde",
                 });
+                return client.close();
               } else {
                 res.render("login", {
                   layout: "public",

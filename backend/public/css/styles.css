@@ -22,6 +22,19 @@ h1 {
   font-family: Quicksand-bold;
 }
 
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.fs-1{
+  font-size: 1.5em;
+}
 .navbar {
   position: absolute;
 }
@@ -52,13 +65,71 @@ h1 {
   background-attachment: fixed;
   background-position: 50% 100%;
   min-height: 100vh;
-  background-size: 1000px;
+  background-size: 50%;
   padding: 1px;
   color: #000000;
 }
-
+#formData {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 100%;
+  min-height: 100vh;
+  background-size: 50%;
+  padding: 1px;
+  color: #000000;
+}
+#selectActionMenu {
+  background: url("../images/learning.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 100%;
+  min-height: 100vh;
+  background-size: 35%;
+  padding: 1px;
+  color: #000000;
+}
+#selectTeachingMenu {
+  background: url("../images/teaching.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 100%;
+  min-height: 100vh;
+  background-size: 35%;
+  padding: 1px;
+  color: #000000;
+}
+#listedItems {
+  background: url("../images/nolettersmans.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 100%;
+  min-height: 100vh;
+  background-size: 70%;
+  padding: 1px;
+  color: #000000;
+}
+#coursesContainer{
+position: relative;
+min-height: 100vh;
+}
+.course{
+}
 .flex{
   display: flex;
+}
+
+.relativo{
+  position: relative;
+}
+.absoluto{
+  position: absolute;
+}
+.enBloque{
+  display: block;
 }
 
 .mb-0 {
@@ -106,20 +177,6 @@ h1 {
   border-radius: 2%;
 }
 
-@media (min-width: 993px) {
-  .brand-logo {
-    margin-left: 3%;
-  }
-
-  .center-align {
-    margin-top: 100px;
-  }
-
-  .avatar {
-    width: 150px;
-    height: 150px;
-  }
-}
 
 .flex-col {
   display: flex;
@@ -142,7 +199,10 @@ h1 {
   display: flex;
   flex-direction: row;
 }
-
+.align-center{
+  display: flex;
+  align-items: center;
+}
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -166,12 +226,31 @@ h1 {
 #notificationMsg{
   padding: 20px;
   border-radius: 8px;
-  min-height: 480px;
-  max-width: 840px !important;
+  position: relative;
 }
-.btnAction{
-min-width: 220px;
+#btnWelcomeContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
+#selectionActionBtn{
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.naoBorder{
+  border: none !important;
+}
+
+.events{
+  border: solid 1px black !important; 
+  margin-top: 20px !important; 
+  margin-bottom: 20px !important; 
+  padding: 10px;
+}
+
 .eventsTitle{
   font-size: 3.7em;
 }
@@ -185,6 +264,43 @@ min-width: 220px;
   justify-content: space-evenly;
 }
 
+
+
+@media (min-width: 993px) {
+  .brand-logo {
+    margin-left: 3%;
+  }
+
+  .center-align {
+    margin-top: 100px;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+  #btnWelcomeContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+
+  .eventsTitle{
+    font-size: 2.7em;
+  }
+
+  .secondaryText{
+    font-size: 1.7em;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  .secondaryText {
+    font-size: 2em;
+    font-family: Quicksand-semiBold;
+  }
+}
 
 
 .glitch {

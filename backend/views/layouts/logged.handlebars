@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8" />
+	<meta charset="UTF-8" />
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!--Import Google Icon Font-->
@@ -12,6 +13,7 @@
 	<link rel="stylesheet" href="/css/styles.css" />
 	<title>Apprender - La tecnologia nos une</title>
 </head>
+
 <body>
 	<nav class="transparent navbar">
 		<div class="nav-wrapper">
@@ -23,32 +25,51 @@
 			</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
-					<a href="/learn"><span class="black-text">Mis Clases</span></a>
-				</li>
-				<li>
-					<a href="/learn"><span class="black-text">Mi Perfil</span></a>
+					<a href="/"><span class="black-text">Mis Clases</span></a>
 				</li>
 				<li>
 					<a href="/learn"><span class="black-text">Aprender</span></a>
 				</li>
 				<li>
-					<a href="/learn"><span class="black-text">Enseñar</span></a>
+					<a href="/teach"><span class="black-text">Enseñar</span></a>
 				</li>
 				<li>
-					<a href="#" data-target="modalForm" class="modal-trigger"><span class="black-text">Cerrar Sesión</span></a>
+					<span class="black-text  align-center justify-center">
+						<i class="small material-icons">local_atm</i>{{user.cash}}
+					</span>
+				</li>
+				<li>
+					<a href="/user/logout" data-target="modalForm" class="modal-trigger"><span class="black-text">Cerrar
+							Sesión</span></a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 	<header>
 		<ul class="sidenav" id="mobile-demo">
-			<li><a href="/">Aprender</a></li>
-			<li><a href="#" onclick="registerForm();">Iniciar Sesión</a></li>
+				<li>
+					<a href="/"><span class="black-text">Mis Clases</span></a>
+				</li>
+				<li>
+					<a href="/learn"><span class="black-text">Aprender</span></a>
+				</li>
+				<li>
+					<a href="/teach"><span class="black-text">Enseñar</span></a>
+				</li>
+				<li>
+					<span class="black-text  align-center justify-center">
+						<i class="small material-icons">local_atm</i>{{user.cash}}
+					</span>
+				</li>
+				<li>
+					<a href="/user/logout" data-target="modalForm" class="modal-trigger"><span class="black-text">Cerrar
+							Sesión</span></a>
+				</li>
 		</ul>
 	</header>
 	<div class="row mb-0">
 		<div id="app">
-      {{{body}}}
+			{{{body}}}
 		</div>
 	</div>
 	<!--JavaScript at end of body for optimized loading-->
@@ -65,4 +86,5 @@
 	</script>
 
 </body>
+
 </html>

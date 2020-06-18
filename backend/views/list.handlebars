@@ -1,0 +1,51 @@
+<section id="listedItems">
+  <div class="container center-align animate__animated animate__fadeIn">
+    <div class="row">
+      {{#if classList}}
+      <div id="notificationMsg" class="col s12 m12 l8 offset-l2 mt-5  blue-grey lighten-5 ">
+        <h1 class="eventsTitle pink-text">Listado de Clases Particulares</h1>
+      </div>
+      <div class="col s12">
+        <h3 class=" Quicksand-medium">Oferta de Clases Particulares</h3>
+        <ul class="collection row mt-5 mb-5 naoBorder">
+          <div class="container">
+            {{#each classList}}
+            {{#if this.pending}}
+            <li class="collection-item col s12 naoBorder events {{this.createdByMail}}">
+              {{#if this.price_event}}
+              <legend class="Quicksand-medium fs-1 right green accent-2">Precio {{this.price_event}}</legend>
+              {{else}}
+              <legend class="Quicksand-medium fs-1 right yellow accent-2">VOLUNTARIO</legend>
+              {{/if}}
+              <h6 class="flow-text mt-5">Solicitud para el dia <b>{{this.date_event}}</b> a las
+                <b>{{this.time_event}}</b></h6>
+              <h4 class="Quicksand-medium">{{this.title}}</h4>
+              <h5>{{this.category}} - {{this.especiality}}</b></h5>
+              <p class="flow-text">{{this.description}}</p>
+              <div id="btnWelcomeContainer" class="collection-item">
+                <form action="/teach/requestClass/{{this._id}}" method="POST">
+                  <button type="submit" name="id_event" value="{{this._id}}"
+                    class="indigo accent-3 hoverable btnAction  waves-effect waves-light btn-large">
+                    <span class="white-text secondaryText">Agendar Clase </span>
+                  </button>
+                </form>
+                {{!-- <a  class="indigo accent-3 hoverable btnAction  waves-effect waves-light btn-large">
+              </a> --}}
+              </div>
+              <legend class="Quicksand-medium">Anuncio Creado por {{this.createdByName}}</legend>
+            </li>
+            {{/if}}
+            {{/each}}
+          </div>
+          {{else}}
+          <div id="notificationMsg" class="col s12 m12 l8 offset-l2 mt-5  blue-grey lighten-5 ">
+            <h1 class="eventsTitle pink-text">Listado de Clases Particulares</h1>
+          </div>
+          <div class="col s12">
+            <h3 class=" Quicksand-medium">Actualmente no hay ninguna Clase disponible</h3>
+          </div>
+      </div>
+      {{/if }}
+    </div>
+  </div>
+</section>

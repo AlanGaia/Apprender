@@ -1,3 +1,92 @@
+{{#if user.events}}
+<section id="myClasses">
+  <div class="container center-align animate__animated animate__fadeIn">
+    <div class="row">
+      <div id="notificationMsg" class="col s12 m12 l8 offset-l2 mt-5  blue lighten-5 events ">
+
+        <legend class="flow-text right events blue-grey lighten-5"> Tu monto disponible:
+          <span class="green accent-2 align-center justify-center">
+            <i class="small material-icons">local_atm</i>{{user.cash}}
+          </span>
+          {{!-- <div class="right">
+            <a class="indigo hoverable  waves-effect waves-light btn-small">
+              <span class="white-text">Recargar</span>
+            </a>
+            </div> --}}
+        </legend>
+
+        <div class="left mt-5">
+          <h3 class="left-align">Hola {{user.name}}</h3>
+          <h1 class="eventsTitle">Aqui estan tus clases:</h1>
+        </div>
+      </div>
+
+
+      <div class="col s12 l6">
+        <h5 class="deep-purple-text">Clases Confirmadas</h5>
+        <ul class="collection row mt-5 mb-5 naoBorder">
+          {{#each user.events}}
+          {{#if this.confirmed}}
+          <li class="collection-item col s12 l10 center-align naoBorder events">
+            <legend class="right green accent-3">CONFIRMADA</legend>
+            <div class="flex m-0">
+            <legend class="fs-1 events mr-5">{{this.time_event}}</legend>
+            <legend class="fs-1 events">{{this.date_event}}</legend>
+            </div>
+            <h3 class="Quicksand-medium">{{this.title}}</h3>
+            <h4 class="text-flow">{{this.especiality}}</h4>
+            <div class="divider"></div>
+            <h5>
+              <span class="mb-5">Estudiante: {{this.student}}</span><br>
+              <span>Profesor: {{this.teacher}}</span>
+            </h5>
+            <p class="flow-text">{{this.description}}</p>
+            <div id="btnWelcomeContainer" class="collection-item">
+              <a href="{{this.link}}" target="blank" class="indigo accent-3 hoverable btnAction  waves-effect waves-light btn-large">
+                <span class="white-text fs-1">Ir a la Clase</span>
+              </a>
+              <a class="red accent-3 hoverable btnAction  waves-effect waves-light btn-large">
+                <span class="white-text fs-1">Cancelar</span>
+              </a>
+            </div>
+            <legend class="Quicksand-medium">Anuncio Creado por {{this.createdByName}}</legend>
+          </li>
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+
+
+      <div class="col s12 l6">
+        <h5 class="pink-text">En espera de confirmación</h5>
+        <ul class="collection row mt-5 mb-5 naoBorder">
+          {{#each user.events}}
+          {{#if this.pending}}
+          <li class="collection-item col s12 l10 center-align naoBorder events">
+            <legend class="right orange accent-3">PENDIENTE</legend>
+            <h6><b>Creado {{this.createdDate}}</b></h6>
+            <h4 class="Quicksand-medium">{{this.title}}</h4>
+            {{!-- <h5 >18:00 con <b>Adrian</b></h5> --}}
+            <p class="flow-text">{{this.description}}</p>
+            <div id="btnWelcomeContainer" class="collection-item ">
+              <form action="/learn/delete/{{this._id}}" method="POST">
+                <button type="submit" class="red accent-3 hoverable btnAction  waves-effect waves-light btn-large">
+                  <span class="white-text secondaryText">Cancelar</span>
+                </button>
+              </form>
+            </div>
+            <legend class="Quicksand-medium">Anuncio Creado por {{this.createdByName}}</legend>
+          </li>
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{{else}}
 <section id="myClasses">
   <div class="container center-align animate__animated animate__fadeIn">
     <div class="row">
@@ -7,27 +96,21 @@
         <p class="secondaryText">Parece que no tienes clases<br>
           ¿Porque no intentas inscribirte a una?
           <br>Es muy facil</p>
-          <div class="col s12 m4 ">
-          <a  class="green hoverable  waves-effect waves-light btn-large">
-						<span class="white-text">Recargar Monedas</span>
-					</a>
-          </div>
-          <div class="col s12 m4">
-          <a  class="indigo hoverable btnAction waves-effect waves-light btn-large">
-						<span class="white-text">Buscar Clases</span>
-					</a>
-          </div>
-          <div class="col s12 m4">
-          <a  class="red hoverable btnAction  waves-effect waves-light btn-large">
-						<span class="white-text">Enseñar</span>
-					</a>
-          </div>
-
+        <div id="btnWelcomeContainer">
+          {{!-- <a class="green hoverable  waves-effect waves-light btn-large">
+            <span class="white-text disabled">Recargar dinero</span>
+          </a> --}}
+          <a href="/learn" class="indigo hoverable btnAction waves-effect waves-light btn-large">
+            <span class="white-text">aprender</span>
+          </a>
+          <a href="/teach" class="red hoverable btnAction  waves-effect waves-light btn-large">
+            <span class="white-text">Enseñar</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
   </div>
-
-
-
 </section>
+
+{{/if}}

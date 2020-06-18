@@ -1,0 +1,102 @@
+<section id="formData">
+  <div class="container center-align animate__animated animate__fadeIn">
+    <div class="row">
+      <div class="col s12 l4 offset-l4">
+        {{#if message}}
+        <div class="{{color}} lighten-4 alertmsg animate__animated animate__backInDown mb-5">
+          <h5 class="{{color}}-text" id="msg">{{message}}</h5>
+        </div>
+        {{/if}}
+        <form action="/learn/class" method="POST">
+          <h2>Crear clase particular</h2>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">dvr</i>
+            <input id="title" name="title" type="text" value="{{title}}" class="validate" required>
+            <label for="title">Titulo de la Clase</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">folder_special</i>
+            <input id="category" name="category" type="text" value="{{category}}" class="autocomplete validate"
+              required>
+            <label for="category">Categoria</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">local_play</i>
+            <input id="especiality" name="especiality" value="{{especiality}}" type="text" class="validate" required>
+            <label for="especiality">Especialidad</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">description</i>
+            <textarea id="textarea1" name="description" value="{{description}}" class="materialize-textarea validate"
+              required></textarea>
+            <label for="textarea1">Tematica Principal</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">event</i>
+            <input type="text" id="date_event" name="date_event" value="{{date_event}}" class="datepicker" required>
+            <label for="date_event">Fecha de la Clase</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">access_time</i>
+            <input type="text" id="time_event" name="time_event" value="{{time_event}}" class="timepicker" required>
+            <label for="time_event">Hora de la Clase</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">local_atm</i>
+            <input type="number" id="price_event" name="price_event" min="0" class="validate" required>
+            <label for="price_event">Precio a Pagar</label>
+          </div>
+          <a href="/learn" class="blue-grey lighten-2 hoverable waves-effect waves-light btn-large modal-trigger">
+            Atras
+          </a>
+          <button type="submit" class="pink hoverable  waves-effect waves-light btn-large">
+            Crear Clase Particular
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+</section>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.autocomplete');
+    var instances = M.Autocomplete.init(elems, {
+      data: {
+        "Tecnologia": null,
+        "Idiomas": null,
+        "Ciencias": null,
+        "Matematicas": null,
+      },
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.datepicker');
+    let date = new Date;
+    let day = date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+    let minDate = new Date(year, month, day);
+    let maxDate = new Date(year, month, day + 25);
+    console.log(maxDate);
+    var instances = M.Datepicker.init(elems, {
+      minDate: minDate,
+      maxDate: maxDate,
+      format: 'dd mmm yyyy',
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.timepicker');
+    var instances = M.Timepicker.init(elems, {});
+  });
+</script>
